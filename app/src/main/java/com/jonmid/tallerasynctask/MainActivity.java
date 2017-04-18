@@ -115,6 +115,7 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             cargarDatos();
             cargador.setVisibility(View.GONE);
         }
