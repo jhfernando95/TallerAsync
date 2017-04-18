@@ -1,23 +1,25 @@
 package com.jonmid.tallerasynctask;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.jonmid.tallerasynctask.Models.Post;
+import com.jonmid.tallerasynctask.Parser.JsonParser;
+
 import java.io.IOException;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,9 +28,7 @@ public class MainActivity extends AppCompatActivity {
     ProgressBar cargador;
     Button boton;
     List<Post> mysPost;
-    ListView LIST;
-    ArrayList<String> arrayList;
-    ArrayAdapter<String> adapter;
+    LinearLayout myLiner;
 
 
 
@@ -40,8 +40,8 @@ public class MainActivity extends AppCompatActivity {
 
         cargador = (ProgressBar) findViewById(R.id.cargador);
         boton = (Button) findViewById(R.id.boton);
-        LIST = (ListView) findViewById(R.id.list);
-        arrayList = new ArrayList<String>();
+        myLiner = (LinearLayout) findViewById(R.id.myLiner);
+
 
 
 
@@ -73,10 +73,18 @@ public class MainActivity extends AppCompatActivity {
         if(mysPost != null){
             for (Post post:mysPost){
 
-            lista.add(post.getTitle());
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,LinearLayout.LayoutParams.MATCH_PARENT);
+                params.setMargins(0,0,0,30);
+
+                TextView myText = new TextView(this);
+                myText.setText(post.getTitle());
+                myText.setTextColor(Color.WHITE);
+                myText.setBackgroundResource(R.color.colorAccent);
+                myText.setLayoutParams(params);
+
+                myLiner.addView(myText);
             }
-            ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,lista);
-            LIST.setAdapter(adaptador);
+
 
 
         }
