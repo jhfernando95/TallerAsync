@@ -29,14 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ListView LIST;
     ArrayList<String> arrayList;
     ArrayAdapter<String> adapter;
-    /*TextView texto;
-    TextView texto2;
-    TextView texto3;
-    TextView texto4;
-    TextView texto5;
-    TextView texto6;
-    TextView texto7;
-    */
+
 
 
 
@@ -49,13 +42,7 @@ public class MainActivity extends AppCompatActivity {
         boton = (Button) findViewById(R.id.boton);
         LIST = (ListView) findViewById(R.id.list);
         arrayList = new ArrayList<String>();
-        /*texto = (TextView) findViewById(R.id.texto);
-        texto2= (TextView) findViewById(R.id.texto2);
-        texto3= (TextView) findViewById(R.id.texto3);
-        texto4 = (TextView) findViewById(R.id.texto4);
-        texto5= (TextView) findViewById(R.id.texto5);
-        texto6= (TextView) findViewById(R.id.texto6);
-        texto7= (TextView) findViewById(R.id.texto7);*/
+
 
 
     }
@@ -90,26 +77,7 @@ public class MainActivity extends AppCompatActivity {
             }
             ArrayAdapter<String> adaptador= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,lista);
             LIST.setAdapter(adaptador);
-            /*
-                for (Post post:mysPost){
-                    if(post.getId() ==1){
-                        texto.append(post.getTitle());
-                    }else if (post.getId() ==2){
-                        texto2.append(post.getTitle());
-                    }else if (post.getId() ==3){
-                        texto3.append(post.getTitle());
-                    }else if (post.getId() ==4){
-                        texto4.append(post.getTitle());
-                    }else if (post.getId() ==5){
-                        texto5.append(post.getTitle());
-                    }else if (post.getId() ==6){
-                        texto6.append(post.getTitle());
-                    }
-                    else if (post.getId() ==7){
-                        texto7.append(post.getTitle());
-                    }
-                }
-        */
+
 
         }
 
